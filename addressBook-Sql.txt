@@ -79,3 +79,16 @@ mysql> select * from address_book;
 | rashmi    | deshmukh  | pimpri      | pune | maharashtra |  411035 | 7822725224  | rash22gmail.com    |
 +-----------+-----------+-------------+------+-------------+---------+-------------+--------------------+
 3 rows in set (0.00 sec)
+
+UC5 :- Delete peron using person's name
+mysql> delete from address_book where firstName = 'sheetal';
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from address_book;
++-----------+-----------+---------+------+-------------+---------+-------------+--------------------+
+| firstName | lastName  | address | city | state       | zipCode | phoneNumber | email              |
++-----------+-----------+---------+------+-------------+---------+-------------+--------------------+
+| preeti    | nimbadkar | kothrud | pune | maharashtra |  411026 | 8675345673  | preeti11@gmail.com |
+| rashmi    | deshmukh  | pimpri  | pune | maharashtra |  411035 | 7822725224  | rash22gmail.com    |
++-----------+-----------+---------+------+-------------+---------+-------------+--------------------+
+2 rows in set (0.00 sec)
