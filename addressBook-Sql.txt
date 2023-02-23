@@ -102,3 +102,51 @@ mysql> select * from address_book where city = 'pune' or state = 'maharashtra';
 | rashmi    | deshmukh  | pimpri  | pune | maharashtra |  411035 | 7822725224  | rash22gmail.com    |
 +-----------+-----------+---------+------+-------------+---------+-------------+--------------------+
 2 rows in set (0.00 sec)
+
+UC7 :- size of address book by city and state
+
+mysql> insert into address_book(firstName, lastName, address, city, state, zipCode, phoneNumber,email)values('sakshi', 'bhagat', 'kumbrepark', 'pune', 'maharashtra', 411025, 7498714356, 'sakshi44@gmail.com'),('chetan','shinde','nagar','bhopal', 'madhyapradesh', 123432, '7456763217', 'chetan@gmail.com');
+Query OK, 2 rows affected (0.04 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from address_book;
++-----------+-----------+------------+--------+---------------+---------+-------------+--------------------+
+| firstName | lastName  | address    | city   | state         | zipCode | phoneNumber | email              |
++-----------+-----------+------------+--------+---------------+---------+-------------+--------------------+
+| preeti    | nimbadkar | kothrud    | pune   | maharashtra   |  411026 | 8675345673  | preeti11@gmail.com |
+| rashmi    | deshmukh  | pimpri     | pune   | maharashtra   |  411035 | 7822725224  | rash22gmail.com    |
+| sakshi    | bhagat    | kumbrepark | pune   | maharashtra   |  411025 | 7498714356  | sakshi44@gmail.com |
+| chetan    | shinde    | nagar      | bhopal | madhyapradesh |  123432 | 7456763217  | chetan@gmail.com   |
++-----------+-----------+------------+--------+---------------+---------+-------------+--------------------+
+4 rows in set (0.00 sec)
+
+mysql> update address_book set city = 'nanded' where firstName = 'preeti';
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from address_book;
++-----------+-----------+------------+--------+---------------+---------+-------------+--------------------+
+| firstName | lastName  | address    | city   | state         | zipCode | phoneNumber | email              |
++-----------+-----------+------------+--------+---------------+---------+-------------+--------------------+
+| preeti    | nimbadkar | kothrud    | nanded | maharashtra   |  411026 | 8675345673  | preeti11@gmail.com |
+| rashmi    | deshmukh  | pimpri     | pune   | maharashtra   |  411035 | 7822725224  | rash22gmail.com    |
+| sakshi    | bhagat    | kumbrepark | pune   | maharashtra   |  411025 | 7498714356  | sakshi44@gmail.com |
+| chetan    | shinde    | nagar      | bhopal | madhyapradesh |  123432 | 7456763217  | chetan@gmail.com   |
++-----------+-----------+------------+--------+---------------+---------+-------------+--------------------+
+4 rows in set (0.00 sec)
+
+mysql> select count(city) from address_book where city = 'pune';
++-------------+
+| count(city) |
++-------------+
+|           2 |
++-------------+
+1 row in set (0.04 sec)
+
+mysql> select count(state) from address_book where state = 'maharashtra';
++--------------+
+| count(state) |
++--------------+
+|            3 |
++--------------+
+1 row in set (0.00 sec)
