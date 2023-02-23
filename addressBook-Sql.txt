@@ -64,3 +64,18 @@ mysql> select * from address_book;
 | rashmi    | deshmukh  | warje       | pune | maharashtra |  411035 | 7822725224  | rash22gmail.com    |
 +-----------+-----------+-------------+------+-------------+---------+-------------+--------------------+
 3 rows in set (0.00 sec)
+
+UC4 :- Edit existing contact person using their name
+mysql> update address_book set address = 'pimpri' where firstName = 'rashmi';
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from address_book;
++-----------+-----------+-------------+------+-------------+---------+-------------+--------------------+
+| firstName | lastName  | address     | city | state       | zipCode | phoneNumber | email              |
++-----------+-----------+-------------+------+-------------+---------+-------------+--------------------+
+| sheetal   | adagale   | shivajinagr | pune | maharashtra |  411025 | 7845215963  | sheetal@gmail.com  |
+| preeti    | nimbadkar | kothrud     | pune | maharashtra |  411026 | 8675345673  | preeti11@gmail.com |
+| rashmi    | deshmukh  | pimpri      | pune | maharashtra |  411035 | 7822725224  | rash22gmail.com    |
++-----------+-----------+-------------+------+-------------+---------+-------------+--------------------+
+3 rows in set (0.00 sec)
