@@ -44,3 +44,23 @@ mysql> desc address_book;
 | email       | varchar(20)  | NO   |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
 8 rows in set (0.32 sec)
+
+UC3 :- Insert new contacts to address book
+mysql> insert into address_book(firstName, lastName, address, city, state, zipCode, phoneNumber, email)values('sheetal', 'adagale', 'shivajinagr', 'pune', 'maharashtra', 411025, 7845215963, 'sheetal@gmail.com');
+Query OK, 1 row affected (0.28 sec)
+
+mysql> insert into address_book(firstName, lastName, address, city, state, zipCode, phoneNumber, email)values('preeti', 'nimbadkar', 'kothrud', 'pune', 'maharashtra', 411026, 8675345673, 'preeti11@gmail.com');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into address_book(firstName, lastName, address, city, state, zipCode, phoneNumber, email)values('rashmi', 'deshmukh', 'warje', 'pune', 'maharashtra', 411035, 7822725224, 'rash22gmail.com');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from address_book;
++-----------+-----------+-------------+------+-------------+---------+-------------+--------------------+
+| firstName | lastName  | address     | city | state       | zipCode | phoneNumber | email              |
++-----------+-----------+-------------+------+-------------+---------+-------------+--------------------+
+| sheetal   | adagale   | shivajinagr | pune | maharashtra |  411025 | 7845215963  | sheetal@gmail.com  |
+| preeti    | nimbadkar | kothrud     | pune | maharashtra |  411026 | 8675345673  | preeti11@gmail.com |
+| rashmi    | deshmukh  | warje       | pune | maharashtra |  411035 | 7822725224  | rash22gmail.com    |
++-----------+-----------+-------------+------+-------------+---------+-------------+--------------------+
+3 rows in set (0.00 sec)
