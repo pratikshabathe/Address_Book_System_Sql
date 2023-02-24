@@ -214,3 +214,29 @@ mysql> select addressBook_type, count(*) from address_book group by addressBook_
 | profession       |        1 |
 +------------------+----------+
 3 rows in set (0.10 sec)
+
+UC11 :- Add Person to both friend and family
+
+mysql> insert into address_book(firstName, lastName, address, city, state, zipCode, phoneNumber, email, addressBook_name, addressBook_type)values('rashmi', 'deshmukh', 'pimpri', 'pune', 'maharashtra', 411035, 7822725224, 'rash22gmail.com', ' book2', 'family');
+Query OK, 1 row affected (0.73 sec)
+
+mysql> insert into address_book(firstName, lastName, address, city, state, zipCode, phoneNumber, email, addressBook_name, addressBook_type)values('sakshi', 'bhagat', 'kumbrepark', 'pune', 'maharashtra', 411025, 7498714356, 'sakshi44@gmail.com', ' book3', 'friends');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into address_book(firstName, lastName, address, city, state, zipCode, phoneNumber, email, addressBook_name, addressBook_type)values(' chetan', 'shinde', ' nagar', ' bhopal', 'madhyapradesh', 123432, 7456763217, ' chetan@gmail.com', ' book4', 'friends');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from address_book;
++-----------+-----------+------------+---------+---------------+---------+-------------+--------------------+------------------+------------------+
+| firstName | lastName  | address    | city    | state         | zipCode | phoneNumber | email              | addressBook_name | addressBook_type |
++-----------+-----------+------------+---------+---------------+---------+-------------+--------------------+------------------+------------------+
+| preeti    | nimbadkar | kothrud    | nanded  | maharashtra   |  411026 | 8675345673  | preeti11@gmail.com | book1            | family           |
+| rashmi    | deshmukh  | pimpri     | pune    | maharashtra   |  411035 | 7822725224  | rash22gmail.com    | book2            | friends          |
+| sakshi    | bhagat    | kumbrepark | pune    | maharashtra   |  411025 | 7498714356  | sakshi44@gmail.com | book3            | family           |
+| chetan    | shinde    | nagar      | bhopal  | madhyapradesh |  123432 | 7456763217  | chetan@gmail.com   | book4            | profession       |
+| preeti    | nimbadkar | kothrud    | nanded  | maharashtra   |  411026 | 8675345673  | preeti11@gmail.com | book1            | friends          |
+| rashmi    | deshmukh  | pimpri     | pune    | maharashtra   |  411035 | 7822725224  | rash22gmail.com    |  book2           | family           |
+| sakshi    | bhagat    | kumbrepark | pune    | maharashtra   |  411025 | 7498714356  | sakshi44@gmail.com |  book3           | friends          |
+|  chetan   | shinde    |  nagar     |  bhopal | madhyapradesh |  123432 | 7456763217  |  chetan@gmail.com  |  book4           | friends          |
++-----------+-----------+------------+---------+---------------+---------+-------------+--------------------+------------------+------------------+
+8 rows in set (0.00 sec)
